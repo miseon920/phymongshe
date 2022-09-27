@@ -25,5 +25,28 @@ const top_banner = [
     link: "/",
   },
 ];
+const main_content = [
+  {
+    id: 1,
+    strong: "main_slide01",
+    content: "7만원 이상 구매 시, SOS마스크 1BOX 를 드려요!",
+    des: "매일 쓰는 제품은 묶어서, 번들상품 UP TO 40% OFF",
+    link: "/",
+  },
+  {
+    id: 2,
+    strong: "main_slide02",
+    content: "회원가입 시 5,000원 적립금 / 3만원이상 무료배송",
+    des: "매일 쓰는 제품은 묶어서, 번들상품 UP TO 40% OFF",
+    link: "/",
+  },
+  {
+    id: 3,
+    strong: "main_slide03",
+    content: "피몽쉐가 처음이라면, 0원부터 만나보는 트라이얼 제품",
+    des: "매일 쓰는 제품은 묶어서, 번들상품 UP TO 40% OFF",
+    link: "/",
+  },
+];
 
-export { top_banner };
+export { top_banner, main_content };

@@ -1,0 +1,52 @@
+@use "common";
+
+.Header {
+  line-height: 8rem;
+  position: fixed;
+  top: 0rem;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  &.on {
+    background: common.$wColor;
+  }
+  .gnb {
+    position: relative;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      font-size: 1.5rem;
+      &.right {
+        gap: 20px;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 0;
+        right: 4rem;
+        color: rgba(0, 0, 0, 0.35);
+        .cart {
+          position: relative;
+          span {
+            position: absolute;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 1rem;
+            padding: 0 0.25rem;
+            top: 2rem;
+            right: -0.5rem;
+            background: common.$mainColor;
+            color: common.$wColor;
+            border-radius: 50%;
+            line-height: 1.5rem;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    position: absolute;
+    top: 0;
+    left: 8rem;
+  }
+}
