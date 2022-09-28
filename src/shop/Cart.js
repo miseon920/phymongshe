@@ -5,7 +5,7 @@ const Cart = ({ cart }) => {
     <div style={{ paddingTop: "500px" }}>
       {cart.map((ca) => {
         return (
-          <ul>
+          <ul key={ca.id}>
             <li>{ca.id}</li>
             <li>{ca.item}</li>
           </ul>

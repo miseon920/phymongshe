@@ -2,13 +2,15 @@
 
 .Header {
   line-height: 8rem;
-  position: fixed;
+  position: sticky;
   top: 0rem;
   left: 0;
   width: 100%;
+
   z-index: 1;
   &.on {
     background: common.$wColor;
+    border-bottom: 1px solid common.$mainColor;
   }
   .gnb {
     position: relative;
