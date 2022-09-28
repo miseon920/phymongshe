@@ -12,7 +12,7 @@ const Item = ({ shopList, cart, setCart }) => {
         </div>
         <div className="right">
           <div className="name">{matchItem.name}</div>
-          <div className="des">{matchItem.des.substring(0, 100)}</div>
+          <div className="des">{matchItem.des}</div>
           <ul className="color">
             {matchItem.color.map((color, idx) => {
               return (
@@ -37,6 +37,7 @@ const Item = ({ shopList, cart, setCart }) => {
                   price: matchItem.price,
                 },
               ]);
+
               navigate(`/Cart`);
             }}
           >

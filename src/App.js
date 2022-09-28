@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import useLocalStorage from "./components/useLocalStorage";
 import axios from "axios";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -11,19 +12,20 @@ import "./css/ShopDetail.scss";
 
 function App() {
   const [item, setItem] = useState();
-  const [cart, setCart] = useState([]);
-
+  //const [cart, setCart] = useState([]);
+  const [cart, setCart] = useLocalStorage("cart", []);
   useEffect(() => {
     window.scrollTo(0, 0);
     return () => {
       window.scrollTo(0, 0);
     };
   }, []);
+
   useEffect(() => {
     const url = "https://desipossa.github.io/shop_cra/assets/data.json";
     const getProduct = async () => {
       const res = await axios.get(url);
-      console.log(res.data); //axios는 .data를 붙여야함
+      //console.log(res.data); //axios는 .data를 붙여야함
       const shopdata = res.data.slice(50, 140).map((it) => {
         return {
           id: it.id,
@@ -49,7 +51,10 @@ function App() {
       {item ? (
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/Cart" element={<Cart cart={cart} />} />
+          <Route
+            path="/Cart"
+            element={<Cart cart={cart} setCart={setCart} />}
+          />
           <Route path="/shopList" element={<List shopList={item} />} />
           <Route
             path="/shopItem/:item"
@@ -87,6 +92,11 @@ https://inpa.tistory.com/entry/AXIOS-%F0%9F%93%9A-%EC%84%A4%EC%B9%98-%EC%82%AC%E
 
 #상세페이지 구현
 https://bmy1320.tistory.com/entry/React-Router-useLocation-%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B5%AC%ED%98%84
+
+#로컬스트리지
+
+https://www.daleseo.com/react-hooks-use-web-storage/
+
 */
 
 /*
