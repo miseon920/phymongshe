@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import TopBanner from "./TopBanner";
 import MainNav from "./MainNav";
 import "../css/Header.scss";
 import { FiUser, FiShoppingCart, FiSearch } from "react-icons/fi";
 import { useEffect, useState } from "react";
-const Header = () => {
+const Header = ({ cart }) => {
   const [on, setOn] = useState(false);
   useEffect(() => {
     const scrollEvent = () => {
@@ -22,12 +23,12 @@ const Header = () => {
       <TopBanner />
       <div className="gnb">
         <h1>
-          <a href="/">
+          <Link to="/">
             <img
               src={`${process.env.PUBLIC_URL}/assets/img/top_logo.png`}
               alt=""
             />
-          </a>
+          </Link>
         </h1>
         <nav className="inner">
           <MainNav />
@@ -38,7 +39,7 @@ const Header = () => {
           </li>
           <li className="cart">
             <FiShoppingCart />
-            <span>0</span>
+            <span>{cart.length}</span>
           </li>
           <li>
             <FiSearch />

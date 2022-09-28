@@ -1,0 +1,56 @@
+@use "common";
+
+.shopList {
+  padding: 10rem 0;
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    figure {
+      flex: 1 1 15%;
+    }
+    .box {
+      padding-bottom: 2rem;
+    }
+    .name {
+      font-weight: 600;
+      padding-bottom: 1rem;
+    }
+    .des {
+      font-size: 14px;
+      padding-bottom: 1rem;
+      min-height: 3rem;
+    }
+    .price span {
+      color: tomato;
+    }
+  }
+}
+
+.shopItem {
+  padding: 10rem 0;
+  .inner {
+    display: flex;
+    gap: 5rem;
+    div {
+      flex: 1;
+      &.box {
+        text-align: center;
+        border: 1px solid common.$mainColor;
+        padding: 15px;
+      }
+    }
+  }
+  .color {
+    li {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 0;
+    }
+    li ~ li {
+      margin-left: 5px;
+    }
+  }
+}
