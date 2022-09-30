@@ -4,7 +4,7 @@ import MainNav from "./MainNav";
 import "../css/Header.scss";
 import { FiUser, FiShoppingCart, FiSearch } from "react-icons/fi";
 import { useEffect, useState } from "react";
-const Header = ({ cart }) => {
+const Header = ({ cart, shopList }) => {
   const [on, setOn] = useState(false);
   useEffect(() => {
     const scrollEvent = () => {
@@ -31,7 +31,7 @@ const Header = ({ cart }) => {
           </Link>
         </h1>
         <nav className="inner">
-          <MainNav />
+          <MainNav shopList={shopList} />
         </nav>
         <ul className="right">
           <li>

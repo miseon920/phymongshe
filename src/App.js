@@ -47,20 +47,22 @@ function App() {
   }, []); //의존형 배열
   return (
     <>
-      <Header cart={cart} />
       {item ? (
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route
-            path="/Cart"
-            element={<Cart cart={cart} setCart={setCart} />}
-          />
-          <Route path="/shopList" element={<List shopList={item} />} />
-          <Route
-            path="/shopItem/:item"
-            element={<Item shopList={item} cart={cart} setCart={setCart} />}
-          />
-        </Routes>
+        <div className="wapper">
+          <Header cart={cart} shopList={item} />
+          <Routes>
+            <Route path="/" element={<Main shopList={item} />} />
+            <Route
+              path="/Cart"
+              element={<Cart cart={cart} setCart={setCart} />}
+            />
+            <Route path="/shopList" element={<List shopList={item} />} />
+            <Route
+              path="/shopItem/:item"
+              element={<Item shopList={item} cart={cart} setCart={setCart} />}
+            />
+          </Routes>
+        </div>
       ) : (
         <div>로딩중입니다</div>
       )}
