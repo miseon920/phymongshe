@@ -16,7 +16,6 @@ const Cart = ({ cart, setCart }) => {
           <ul key={idx}>
             <li>{ca.id}</li>
             <li>{ca.item}</li>
-            <li>{ca.e} 개</li>
           </ul>
         );
       })}

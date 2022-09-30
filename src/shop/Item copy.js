@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const Item = ({ shopList, cart, setCart }) => {
   const { item } = useParams();
-  const matchItem = shopList.find((it) => item === String(it.id));
+  const matchItem = shopList.find((it) => item == it.id);
   const navigate = useNavigate();
   return (
     <section className="shopItem">
@@ -12,7 +12,7 @@ const Item = ({ shopList, cart, setCart }) => {
         </div>
         <div className="right">
           <div className="name">{matchItem.name}</div>
-          <div className="des">{matchItem.des.substring(0, 300)}</div>
+          <div className="des">{matchItem.des}</div>
           <ul className="color">
             {matchItem.color.map((color, idx) => {
               return (
@@ -35,7 +35,6 @@ const Item = ({ shopList, cart, setCart }) => {
                   item: matchItem.name,
                   color: matchItem.color,
                   price: matchItem.price,
-                  e: 1,
                 },
               ]);
 

@@ -1,7 +1,54 @@
 @use "common";
 
 .shopList {
-  padding: 10rem 0;
+  .category {
+    width: 117rem;
+    margin: 0 auto;
+    text-align: right;
+    line-height: 4rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+  .list {
+    display: flex;
+    justify-content: space-between;
+    width: 117rem;
+    margin: 0 auto 5rem auto;
+    line-height: 4rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    align-items: center;
+    .line {
+      font-size: 0;
+      flex: 1;
+      text-align: center;
+      &::after {
+        display: inline-block;
+        content: "";
+        width: 80%;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+        border-top: 1px dotted rgba(0, 0, 0, 0.1);
+      }
+    }
+    .option li {
+      display: inline-block;
+      & ~ li {
+        margin-left: 1rem;
+        &::before {
+          content: "/";
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+  h2 {
+    text-align: center;
+    line-height: 10rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
   .inner {
     display: grid;
     flex-wrap: wrap;
@@ -9,11 +56,12 @@
     grid-template-columns: repeat(5, 1fr);
 
     .box {
+      border: 1px solid rgba(0, 0, 0, 0.1);
       padding-bottom: 2rem;
     }
     .name {
       font-weight: 600;
-      padding-bottom: 1rem;
+      padding: 1rem 0;
     }
     .des {
       font-size: 14px;

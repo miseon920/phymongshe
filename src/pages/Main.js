@@ -27,10 +27,10 @@ const Main = ({ shopList }) => {
         dots={false}
         bg
       />
-      <MainTab shopList={shopList} arrow={true} dots={true} />
-      <MainCategory shopList={shopList} category={"pencil"} />
+      {/* <MainCategory shopList={shopList} category={"liquid"} />*/}
       <MainCategory shopList={shopList} category={"liquid"} />
-      <MainCategory shopList={shopList} category={"powder"} />
+      <MainCategory shopList={shopList} category={"powder"} bg />
+      <MainTab shopList={shopList} arrow={true} dots={true} />
     </>
   );
 };

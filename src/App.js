@@ -8,6 +8,7 @@ import Main from "./pages/Main";
 import List from "./shop/List";
 import Item from "./shop/Item";
 import Cart from "./shop/Cart";
+import Category from "./shop/Category";
 import "./css/ShopDetail.scss";
 
 function App() {
@@ -57,6 +58,10 @@ function App() {
               element={<Cart cart={cart} setCart={setCart} />}
             />
             <Route path="/shopList" element={<List shopList={item} />} />
+            <Route
+              path="/shopList/:cate"
+              element={<Category shopList={item} />}
+            />
             <Route
               path="/shopItem/:item"
               element={<Item shopList={item} cart={cart} setCart={setCart} />}

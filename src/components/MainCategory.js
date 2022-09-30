@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MainCategory = ({ shopList, category }) => {
+const MainCategory = ({ shopList, category, bg }) => {
   const Mainlist = shopList.filter((it) => category === it.cate);
   return (
-    <div className="shopList">
+    <section className={`shopList sce ${bg ? "bg" : ""}`}>
       <div className="inner">
         {Mainlist.map((it) => {
           return (
@@ -23,7 +23,7 @@ const MainCategory = ({ shopList, category }) => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 
