@@ -74,7 +74,6 @@ function App() {
       {/* {item?.map((item, idx) => (
           <li key={item.id}>{item?.id}</li>
         ))} -옵셔널체이닝*/}
-
       <Footer />
     </>
   );

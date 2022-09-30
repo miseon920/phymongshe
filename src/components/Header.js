@@ -38,8 +38,10 @@ const Header = ({ cart, shopList }) => {
             <FiUser />
           </li>
           <li className="cart">
-            <FiShoppingCart />
-            <span>{cart.length}</span>
+            <Link to="/cart">
+              <FiShoppingCart />
+              <span>{cart.length}</span>
+            </Link>
           </li>
           <li>
             <FiSearch />

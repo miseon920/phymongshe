@@ -11,16 +11,16 @@ const CategorySlider = ({ shopList, category, arrow, dots }) => {
       {Mainlist.map((it) => {
         return (
           <figure key={it.id}>
-            <div className="box">
-              <img src={it.src} alt="" />
-            </div>
-            <div className="name">
-              <Link to={"/shopItem/" + it.id}>{it.name}</Link>
-            </div>
-            <div className="des">{it.des.substring(0, 100)} ...</div>
-            <div className="price">
-              <span>{it.price.toLocaleString()}</span> 원
-            </div>
+            <Link to={"/shopItem/" + it.id}>
+              <div className="box">
+                <img src={it.src} alt="" />
+              </div>
+              <div className="name">{it.name}</div>
+              <div className="des">{it.des.substring(0, 100)} ...</div>
+              <div className="price">
+                <span>{it.price.toLocaleString()}</span> 원
+              </div>
+            </Link>
           </figure>
         );
       })}
